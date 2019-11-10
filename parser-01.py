@@ -3,7 +3,7 @@ import requests
 url = 'https://tv.yandex.ru/50/channels/265'
 txt = requests.get(url).text
 
-f = open('html.html', 'w')
+f = open('html.txt', 'w')
 f.write(txt)  # для контроля выводим в файл
 f.close()
 print('сохранили страницу')
