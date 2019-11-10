@@ -7,11 +7,11 @@
 * parser-01 - написан для старого варианта оформления сайта  
 * parser-02 - написан для нового варианта оформления сайта  
 
-Обе программы работают одинаково, отличается лишь только запрос к сайту:
-head = { 
-	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0'
-}
-txt = requests.get(url, headers=head).text
+Обе программы работают одинаково, отличается лишь только запрос к сайту:  
+head = {  
+	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0'  
+}  
+txt = requests.get(url, headers=head).text  
 
 ---
 
