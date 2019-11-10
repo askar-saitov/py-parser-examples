@@ -1,23 +1,8 @@
-'''
-парсер ТВ-программы с сайта yandex.ru
-на сайте внели изменения, поэтому результаты отличаются от видеоурока
-сайт определяет, что запрос от программы-парсера, а не от браузера, но 
-можно представиться браузером и в запросе requests.get послать заголовок UserAgent,
-который можно узнать из вашего браузера из панели "Сеть" в "Инструментах разработчика"
-этот вопрос обсуждается вот в этом посте: https://habr.com/ru/post/280238/
-я у себя сделал это через два браузера
-такой заголовок мне дал браузер FireFox - 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0'
-такой заголовок мне дал браузер Chrome - 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36'
-оба заголовка позволяют нормально парсить сайт...
-'''
 import requests
 
 url = 'https://tv.yandex.ru/50/channels/265'
-# head = { 
-# 	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0'
-# }
-head = {
-	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36'
+head = { 
+	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0'
 }
 txt = requests.get(url, headers=head).text
 
