@@ -2,7 +2,7 @@ import requests
 
 chanells = {
     1: 'https://tv.yandex.ru/channel/pervyy-16',
-    2: 'https://tv.yandex.ru/channel/pervyy-16'
+    2: 'https://tv.yandex.ru/channel/rossiya-1-31'
 }
 
 limits = {
