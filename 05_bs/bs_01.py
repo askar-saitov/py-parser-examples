@@ -1,3 +1,8 @@
+'''
+pip3 install BeautifulSoup
+pip3 install lxml
+'''
+
 from bs4 import BeautifulSoup
 from sys import platform
 import os
