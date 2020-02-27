@@ -1,6 +1,7 @@
 import requests, re, os, bs4
 
-clear = lambda: os.system('clear')
+# clear = lambda: os.system('clear')
+clear = lambda: os.system('cls')
 
 chanells = {
     1: 'https://tv.yandex.ru/channel/pervyy-16',
@@ -23,7 +24,7 @@ def get_txt(num_chanel):
     return requests.get(url, headers=head).text
 
 def print_html(name_file, txt):
-    f = open(name_file, 'w')
+    f = open(name_file, 'w', encoding='utf-8')
     f.write(txt)  # для контроля выводим в файл
     f.close()
     print('сохранили страницу')
@@ -34,13 +35,13 @@ def print_result(name_file, lines):
     file.close()
 
 def get_content_all(txt):
-    obj_bs = bs4.BeautifulSoup(txt, 'lxml')    
+    obj_bs = bs4.BeautifulSoup(txt, 'lxml')
+
     list_record = obj_bs.findall('li', class_ = 'channel-schedule__event')
     lines = []
     mask = r'\d{2}:\d{2}' # это запрос про время
     for item in list_record:
         line = re.search(mask, item)[0]
         lines.append(line)
-        
-    return lines
 
+    return lines
